@@ -1,0 +1,8 @@
+#!/bin/bash
+# Wait for the dev server to be reachable
+for i in $(seq 1 30); do
+  curl -s -o /dev/null http://localhost:5173 && exit 0
+  sleep 1
+done
+echo "Dev server did not start in time" >&2
+exit 1

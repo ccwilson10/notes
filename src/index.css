@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #F7F4EF;
+  --color-surface: #F0ECE7;
+  --color-surface-hover: #E8E3DB;
+  --color-border: #E3DDD3;
+  --color-text: #3B3631;
+  --color-text-secondary: #8A8279;
+  --color-text-tertiary: #B8B0A4;
+  --color-icon: #6B6560;
+  --color-accent-red: #C46A5A;
+  --color-accent-amber: #C49B5A;
+  --color-accent-green: #7BA477;
+  --color-accent-blue: #5A8EC4;
+  --color-accent-purple: #9B7BBF;
+
+  --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100dvh;
+  display: flex;
+}
+
+.prose-editor {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.prose-editor > * + * {
+  margin-top: 0.5em;
+}
+
+.prose-editor h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 1em;
+}
+
+.prose-editor h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0.75em;
+}
+
+.prose-editor h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 0.5em;
+}
+
+.prose-editor ul,
+.prose-editor ol {
+  padding-left: 1.25em;
+}
+
+.prose-editor ul {
+  list-style-type: disc;
+}
+
+.prose-editor ol {
+  list-style-type: decimal;
+}
+
+.prose-editor li {
+  margin-top: 0.15em;
+}
+
+.prose-editor blockquote {
+  border-left: 2px solid var(--color-border);
+  padding-left: 0.75em;
+  color: var(--color-text-secondary);
+  margin-left: 0;
+}
+
+.prose-editor code {
+  font-size: 12px;
+  background: var(--color-surface);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.prose-editor pre {
+  background: var(--color-surface);
+  padding: 0.75em;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.prose-editor pre code {
+  background: none;
+  padding: 0;
+}
+
+.prose-editor p.is-editor-empty:first-child::before {
+  color: var(--color-text-tertiary);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.rdp-custom {
+  --rdp-accent-color: var(--color-surface-hover);
+}
+
+.rdp-custom button {
+  border: none;
+  background: none;
+}
+
+.tiptap:focus {
+  outline: none;
+}
